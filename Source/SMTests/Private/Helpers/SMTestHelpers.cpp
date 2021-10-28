@@ -10,7 +10,7 @@
 #include "UnrealEd.h"
 #include "BlueprintEditorSettings.h"
 #include "Kismet2/KismetEditorUtilities.h"
-#include "SMBlueprintFactory.h"
+#include "Factory/SMBlueprintFactory.h"
 #include "Blueprints/SMBlueprint.h"
 #include "SMTestContext.h"
 #include "SMUtils.h"

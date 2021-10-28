@@ -1,7 +1,7 @@
 // Copyright Recursoft LLC 2019-2020. All Rights Reserved.
 
 #include "SMUtils.h"
-#include "Blueprints/SMBlueprintGeneratedClass.h"
+//#include "Blueprints/SMBlueprintGeneratedClass.h"
 #include "Engine/World.h"
 #include "SMLogging.h"
 
@@ -292,6 +292,7 @@ bool USMUtils::TryGetStateMachinePropertiesForClass(UClass* Class, TSet<FStructP
 	// Check parent classes.
 	if (PropertiesOut.Num() == 0)
 	{
+		/*
 		// Blueprint parent.
 		if (USMBlueprintGeneratedClass* NextClass = Cast<USMBlueprintGeneratedClass>(Class->GetSuperClass()))
 		{
@@ -299,6 +300,7 @@ bool USMUtils::TryGetStateMachinePropertiesForClass(UClass* Class, TSet<FStructP
 			RootGuid = NextClass->GetRootGuid();
 			return TryGetStateMachinePropertiesForClass(NextClass, PropertiesOut, RootGuid, SuperFlags);
 		}
+		*/
 		// Nativized parent.
 		if (UDynamicClass* NextClass = Cast<UDynamicClass>(Class->GetSuperClass()))
 		{

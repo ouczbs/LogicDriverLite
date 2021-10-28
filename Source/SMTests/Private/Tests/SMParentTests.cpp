@@ -2,7 +2,7 @@
 #include "Blueprints/SMBlueprint.h"
 #include "SMTestHelpers.h"
 #include "Blueprints/SMBlueprintGeneratedClass.h"
-#include "SMBlueprintFactory.h"
+#include "Factory/SMBlueprintFactory.h"
 #include "Utilities/SMBlueprintEditorUtils.h"
 #include "SMTestContext.h"
 #include "Kismet2/KismetEditorUtilities.h"

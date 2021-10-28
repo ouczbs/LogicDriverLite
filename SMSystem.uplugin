@@ -10,37 +10,18 @@
 	"DocsURL": "https://logicdriver.recursoft.net/docs",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/916643d0c665469594233cb0487e6d3d",
 	"SupportURL": "https://logicdriver.recursoft.net",
-	"EngineVersion": "4.25.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [
 		{
 			"Name": "SMSystem",
 			"Type": "Runtime",
-			"LoadingPhase": "PreDefault",
-			"WhitelistPlatforms": [
-				"Win64",
-				"Win32",
-				"Mac",
-				"Linux",
-				"PS4",
-				"XboxOne",
-				"Switch",
-				"Android",
-				"IOS",
-				"TVOS"
-			]
+			"LoadingPhase": "PreDefault"
 		},
 		{
-			"Name": "SMSystemEditor",
+			"Name": "SMEditor",
 			"Type": "UncookedOnly",
-			"LoadingPhase": "PreDefault",
-			"WhitelistPlatforms": [
-				"Win64",
-				"Win32",
-				"Mac",
-				"Linux"
-			]
+			"LoadingPhase": "PreDefault"
 		}
 	]
 }

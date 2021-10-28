@@ -39,7 +39,7 @@ public class SMSystem : ModuleRules
 			);
 
         // Editor specific modules for slate specific configuration of editor widgets.
-        // Configuration values are stored on run-time struct for overall simplicity.
+        // Config values are stored on run-time struct for overall simplicity.
         if (Target.Type == TargetType.Editor)
         {
             PublicDependencyModuleNames.AddRange(

@@ -7,7 +7,7 @@
 
 
 UENUM(BlueprintType)
-enum ESMNetworkConfigurationType
+enum ESMNetworkConfigType
 {
 	SM_Client			UMETA(DisplayName = "Client"),
 	SM_Server			UMETA(DisplayName = "Server"),

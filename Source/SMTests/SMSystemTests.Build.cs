@@ -18,7 +18,7 @@ public class SMSystemTests : ModuleRules
         PrivateIncludePaths.AddRange(
             new string[] {
                 Path.Combine(ModuleDirectory, "Private"),
-                Path.Combine(ModuleDirectory, "../SMSystemEditor/Private")
+                Path.Combine(ModuleDirectory, "../SMEditor/Private")
 				// ... add other private include paths required here ...
 			});
 
@@ -33,7 +33,7 @@ public class SMSystemTests : ModuleRules
                 "KismetCompiler",
                 "SlateCore",
                 "SMSystem",
-                "SMSystemEditor"
+                "SMEditor"
             }
             );
     }

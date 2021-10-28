@@ -1,7 +1,7 @@
 // Copyright Recursoft LLC 2019-2020. All Rights Reserved.
 #include "Blueprints/SMBlueprint.h"
 #include "SMTestHelpers.h"
-#include "SMBlueprintFactory.h"
+#include "Factory/SMBlueprintFactory.h"
 #include "Utilities/SMBlueprintEditorUtils.h"
 #include "SMTestContext.h"
 #include "EdGraph/EdGraph.h"

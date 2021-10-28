@@ -17,9 +17,9 @@ USMStateMachineComponent::USMStateMachineComponent(class FObjectInitializer cons
 	bInitializeOnBeginPlay = true;
 	bStartOnBeginPlay = false;
 	
-	NetworkTickConfiguration = SM_Client;
-	NetworkTransitionConfiguration = SM_Client;
-	NetworkStateConfiguration = SM_ClientAndServer;
+	NetworkTickConfig = SM_Client;
+	NetworkTransitionConfig = SM_Client;
+	NetworkStateConfig = SM_ClientAndServer;
 	TransitionResetTimeSeconds = 2.f;
 	bReplicateStatesOnLoad = true;
 	bTakeTransitionsFromServerOnly = false;
@@ -379,12 +379,12 @@ void USMStateMachineComponent::ConfigureInstanceNetworkSettings()
 	if(InstanceTemplate == nullptr || InstanceTemplate->CanEverTick())
 	{
 		bool bAllowTick = true;
-		if (NetworkTickConfiguration == SM_Server)
+		if (NetworkTickConfig == SM_Server)
 		{
 			// Don't update from clients when server is set.
 			bAllowTick = bHasAuth || bIsListenServer;
 		}
-		else if (NetworkTickConfiguration == SM_Client)
+		else if (NetworkTickConfig == SM_Client)
 		{
 			// Don't update from server when clients are set.
 			bAllowTick = !bHasAuth || bIsListenServer;
@@ -403,17 +403,17 @@ void USMStateMachineComponent::ConfigureInstanceNetworkSettings()
 
 		if (!bIsProxy)
 		{
-			if (NetworkTransitionConfiguration == SM_Server)
+			if (NetworkTransitionConfig == SM_Server)
 			{
 				// Don't update from clients when server is set.
 				bLimitedTransitionAccess = !bHasAuth && !bIsListenServer;
 			}
-			else if (NetworkTransitionConfiguration == SM_Client)
+			else if (NetworkTransitionConfig == SM_Client)
 			{
 				// Don't update from server when clients are set.
 				bLimitedTransitionAccess = bHasAuth && !bIsLocalOnListenServer;
 			}
-			else if(NetworkTransitionConfiguration == SM_ClientAndServer)
+			else if(NetworkTransitionConfig == SM_ClientAndServer)
 			{
 				// Listen servers treat this as a proxy and authority, so we're going to disable transition access on the server in this case.
 				// Helps with Replication Network Test. Both proxy and owner can progress state faster than intended.
@@ -433,12 +433,12 @@ void USMStateMachineComponent::ConfigureInstanceNetworkSettings()
 
 		if (!bIsProxy)
 		{
-			if (NetworkStateConfiguration == SM_Server)
+			if (NetworkStateConfig == SM_Server)
 			{
 				// Don't update from clients when server is set.
 				bLimitedStateExecution = !bHasAuth && !bIsListenServer;
 			}
-			else if (NetworkStateConfiguration == SM_Client)
+			else if (NetworkStateConfig == SM_Client)
 			{
 				// Don't update from server when clients are set.
 				bLimitedStateExecution = bHasAuth && !bIsLocalOnListenServer;

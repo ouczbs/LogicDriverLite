@@ -3,7 +3,7 @@
 #include "SMTestHelpers.h"
 #include "Utilities/SMBlueprintEditorUtils.h"
 #include "SMTestContext.h"
-#include "SMBlueprintFactory.h"
+#include "Factory/SMBlueprintFactory.h"
 #include "Kismet2/KismetEditorUtilities.h"
 #include "Graph/SMGraph.h"
 #include "Graph/SMStateGraph.h"

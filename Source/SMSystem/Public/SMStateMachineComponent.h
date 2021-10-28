@@ -219,7 +219,7 @@ public:
 
 	/** Determine which domain to tick. The state machine must allow ticking for this to take effect. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Network")
-	TEnumAsByte<ESMNetworkConfigurationType> NetworkTickConfiguration;
+	TEnumAsByte<ESMNetworkConfigType> NetworkTickConfig;
 
 	/** 
 	 * The domain to evaluate transitions. Requires Replication and a networked environment.
@@ -232,7 +232,7 @@ public:
 	 * Using bIncludeSimulatedProxies with client driven transitions on an actor without a player controller will not work. Server RPC calls can only be made with a player controller.
 	 */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Network")
-	TEnumAsByte<ESMNetworkConfigurationType> NetworkTransitionConfiguration;
+	TEnumAsByte<ESMNetworkConfigType> NetworkTransitionConfig;
 
 	/** 
 	 * The domain which state logic can be executed on. Requires Replication and a networked environment.
@@ -241,7 +241,7 @@ public:
 	 * ClientAndServer - Both the server and client will execute state logic.
 	 */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Network")
-	TEnumAsByte<ESMNetworkConfigurationType> NetworkStateConfiguration;
+	TEnumAsByte<ESMNetworkConfigType> NetworkStateConfig;
 
 	/**
 	 * Include simulated proxies when processing the client domain. The default client behavior only includes autonomous proxies
@@ -315,7 +315,7 @@ protected:
 	USMInstance* InstanceTemplate;
 
 	/**
-	 * If false the default setting will be used. When replicated this component may still perform some level of override depending on the NetworkTickConfiguration.
+	 * If false the default setting will be used. When replicated this component may still perform some level of override depending on the NetworkTickConfig.
 	 *
 	 * @deprecated Use bCanEverTick on the instance template instead.
 	 */
